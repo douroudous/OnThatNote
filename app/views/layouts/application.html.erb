@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>On That Note...</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link rel="stylesheet" href="animate.css">
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+      <h1>On That Note...</h1>
+      <nav class="row container centered">
+        sign out
+      </nav>
+    </header>
+
+    <main>
+    </br>
+      <% if notice.is_a?(Array) %>
+        <% notice.each do |this_notice| %>
+          <p class="notice"><%= this_notice %></p>
+        <% end %>
+      <%elsif notice %>
+        <p class="notice"> <%= notice %></p>;
+      <% end %>
+
+      <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+    </main>
+
+  </body>
+</html>
