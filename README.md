@@ -2,7 +2,7 @@
 
 ## Description
 
-Users can create and upload custom guitar tablature, as well as view and rate other tabs.
+Users can create notes and checklists.
 
 Heroku Link:
 
