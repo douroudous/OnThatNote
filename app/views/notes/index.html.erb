@@ -1,11 +1,15 @@
 <%= form_tag(notes_path, :method => "get", id: "search-form") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search All Notes" %>
 <% end %>
+</br>
 
 <% @notes.each do |note| %>
-      <p><%= note.title %></p>
+      <p><%= note.title %> - <%= note.user.email %></p>
       <p><%= note.body %></p>
       <% note.items.each do |item| %>
-        <p> <%= item.body %> </p>
+        <p>- <%= item.body %> </p>
       <% end %>
+    </br>
 <% end %>
+
+<div id="note-interface"></div>
