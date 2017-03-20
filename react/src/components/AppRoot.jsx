@@ -1,5 +1,5 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+import Provider from 'react-redux';
 
 import AddTodo from './AddTodo.jsx';
 import TodoList from './TodoList.jsx';
