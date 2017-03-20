@@ -9,7 +9,7 @@ $(function() {
     ReactDOM.render(
       <AppRoot
       />,
-      document.getElementById('app-root')
+      notes
     );
   }
 });

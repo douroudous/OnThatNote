@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'notes#index'
+  root 'interface#show'
 
   resources :notes do
     resources :reviews
