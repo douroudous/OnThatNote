@@ -1,14 +1,13 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppRoot from './components/AppRoot.jsx';
+import App from './components/App.js';
 
 $(function() {
   let notes = document.getElementById('note-interface');
   if (notes) {
     ReactDOM.render(
-      <AppRoot
-      />,
+      <App />,
       notes
     );
   }
