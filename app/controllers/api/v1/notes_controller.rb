@@ -29,6 +29,11 @@ class Api::V1::NotesController < ApplicationController
     render :json => { :notes => @notes }
   end
 
+  def show
+    @note = Note.find(params[:id])
+    render :json => { :items => @note.items }
+  end
+
   # def update
   #   @song = Song.find(params[:id])
   #   @song.tab = JSON.parse(request.body.read)["tab"]

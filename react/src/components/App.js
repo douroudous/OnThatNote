@@ -11,24 +11,24 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-      fetch(`/api/v1/notes.json`,
-        { method: 'get',
-          credentials: 'include'
-        })
-        .then(response => {
-          if (response.ok) {
-            return response;
-          } else {
-            let errorMessage = `${response.status} ($response.statusText)`,
-              error = new Error(errorMessage);
-            throw(error);
-          }
-        })
-        .then(response => response.json())
-        .then(body => {
-          this.setState({ notes: body.notes});
-        })
-        .catch(error => console.error(`Error in fetch: ${error.message}`));
+    fetch(`/api/v1/notes.json`,
+      { method: 'get',
+        credentials: 'include'
+      })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} ($response.statusText)`,
+            error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        this.setState({ notes: body.notes});
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
 
   render() {
