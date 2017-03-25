@@ -1,10 +1,11 @@
 import React from 'react';
+import Note from './Note';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-
+      notes: []
     };
 
   }
@@ -35,15 +36,10 @@ class App extends React.Component {
       return(
         <div>
           <Note
-            key={shoe.id}
-            id={shoe.id}
-            model={shoe.model}
-            version={shoe.version}
-            brand={shoe.brand}
-            picture={shoe.picture}
-            year={shoe.year}
-            price={shoe.price}
-            description={shoe.description}
+            key={note.id}
+            id={note.id}
+            title={note.title}
+            body={note.body}
           />
         </div>
       )
