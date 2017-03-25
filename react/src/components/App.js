@@ -10,7 +10,7 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-      fetch(`/api/v1/notes/${this.props.noteId}.json`,
+      fetch(`/api/v1/notes.json`,
         { method: 'get',
           credentials: 'include'
         })
@@ -25,17 +25,33 @@ class App extends React.Component {
         })
         .then(response => response.json())
         .then(body => {
-          // let song = body.tab;
-          // this.setState({ song: song});
-                        })
+          this.setState({ notes: body.notes});
+        })
         .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
 
   render() {
+    let notes = this.state.notes.map(note => {
+      return(
+        <div>
+          <Note
+            key={shoe.id}
+            id={shoe.id}
+            model={shoe.model}
+            version={shoe.version}
+            brand={shoe.brand}
+            picture={shoe.picture}
+            year={shoe.year}
+            price={shoe.price}
+            description={shoe.description}
+          />
+        </div>
+      )
+    })
 
     return(
       <div className="animated fadeIn">
-        TEST
+        {notes}
       </div>
     );
   }

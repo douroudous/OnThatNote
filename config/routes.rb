@@ -6,14 +6,11 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
-  # namespace :api do
-  #   namespace :v1 do
-  #     resources :songs, only: [:show, :update]
-  #     resources :artists, only: [:show] do
-  #       resources :songs, only: [:new, :create]
-  #     end
-  #   end
-  # end
+  namespace :api do
+    namespace :v1 do
+      resources :notes, only: [:index]
+    end
+  end
 
   resources :interface, only: [:show]
 
