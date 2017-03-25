@@ -12,9 +12,12 @@
     <header>
       <h1>On That Note...</h1>
       <nav class="row container centered">
+        <% if user_signed_in? %>
           <span class="dropbtn"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
+        <% else %>
           <span class="dropbtn"><%= link_to 'Sign In', new_user_session_path %></span>
           <span class="dropbtn"><%= link_to 'Sign Up', new_user_registration_path %></span>
+        <% end %>
       </nav>
     </header>
 
