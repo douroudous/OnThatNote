@@ -47,8 +47,9 @@ class Note extends React.Component {
       return (
         <div>
           <h2>{this.props.title}</h2>
-          <h3>{this.props.body}</h3>
-          {items}
+          <p>{this.props.body}</p>
+          <ul>{items}</ul>
+          <p id={this.props.id}>Edit Note</p>
         </div>
       );
   }

@@ -10,9 +10,9 @@ class Item extends React.Component {
   render() {
 
       return (
-        <div>
+        <li>
           {this.props.body}
-        </div>
+        </li>
       );
   }
 }
