@@ -1,5 +1,7 @@
 import React from 'react';
 import Note from './Note';
+import NewNote from './NewNote';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -47,6 +49,7 @@ class App extends React.Component {
 
     return(
       <div className="animated fadeIn">
+        <NewNote />
         {notes}
       </div>
     );
