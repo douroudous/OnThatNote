@@ -151,45 +151,6 @@ a:hover {
   font-weight: bold;
 }
 
-.selected-chord {
-  color: #009ca3;
-  font-weight: bold;
-}
-
 .hidden {
   visibility: hidden;
-}
-
-.note-form {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px; width: 1px;
-  margin: -1px; padding: 0; border: 0;
-}
-
-.actions {
-  color: #101820;
-  text-align: center;
-}
-
-.field {
-  color: white;
-}
-
-.display-none {
-  display:none;
-}
-
-.add-review{
-  padding-top: 30px;
-}
-
-#search {
-  border-radius: 290486px;
-  text-align: center;
-  font-size: 1.5rem;
-  background-color: #CDDCDE;
-  width: 30%;
-  margin: 0 auto;
 }
