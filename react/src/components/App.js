@@ -33,6 +33,33 @@ class App extends React.Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
 
+  handleSubmitNew(event) {
+    alert(` was created`);
+    debugger;
+    let data = {
+        note: "event something"
+    };
+    let songData = JSON.stringify(data);
+
+    // fetch(`/api/v1/artists/${this.props.noteId}/songs.json`,
+    //   { method: 'post',
+    //     body: songData,
+    //     credentials: 'include'
+    //   })
+    //   .then(response => {
+    //     if (response.ok) {
+    //       return response.json();
+    //     } else {
+    //       let errorMessage = `${response.status} ($response.statusText)`,
+    //         error = new Error(errorMessage);
+    //         throw(error);
+    //     }
+    //   })
+    //   .then(data => {
+    //   })
+    // .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
   render() {
     let notes = this.state.notes.map(note => {
       return(

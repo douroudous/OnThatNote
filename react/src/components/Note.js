@@ -30,28 +30,6 @@ class Note extends React.Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
 
-
-  handleSubmitNew(event) {
-    fetch(`/api/v1/artists/${this.props.artistId}/songs.json`,
-      { method: 'post',
-        body: songData,
-        credentials: 'include'
-      })
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          let errorMessage = `${response.status} ($response.statusText)`,
-            error = new Error(errorMessage);
-            throw(error);
-        }
-      })
-      .then(data => {
-      })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
-
-
   render() {
     let items = this.state.items.map(item => {
       return(
