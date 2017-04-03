@@ -76,7 +76,9 @@ class App extends React.Component {
 
     return(
       <div className="animated fadeIn">
-        <NewNote />
+        <NewNote
+          handleSubmitNew={this.handleSubmitNew}
+        />
         {notes}
       </div>
     );

@@ -9,9 +9,8 @@ class Item extends React.Component {
   }
 
   render() {
-    //onSubmit={this.props.handleSubmitNew} goes in form
     return (
-      <form>
+      <form onSubmit={this.props.handleSubmitNew}>
         <label className='link'>Enter new note:</label>
         <input type="text"/>
         <input className='link'type="submit"/>
