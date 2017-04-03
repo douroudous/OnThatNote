@@ -12,13 +12,11 @@ class Item extends React.Component {
   render() {
     //onSubmit={this.props.handleSubmitNew} goes in form
     return (
-      <div>
-        <form >
-          <label>Enter new note:</label>
-          <input type="text" value={this.state.entry_box}/>
-          <input type="submit"/>
-        </form>
-      </div>
+      <form>
+        <label className='link'>Enter new note:</label>
+        <input type="text"/>
+        <input className='link'type="submit"/>
+      </form>
     );
   }
 }
