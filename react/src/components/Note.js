@@ -33,13 +33,11 @@ class Note extends React.Component {
   render() {
     let items = this.state.items.map(item => {
       return(
-        <div>
-          <Item
-            key={item.id}
-            id={item.id}
-            body={item.body}
-          />
-        </div>
+        <Item
+          key={item.id}
+          id={item.id}
+          body={item.body}
+        />
       )
     })
 
@@ -47,7 +45,7 @@ class Note extends React.Component {
         <div>
           <h2>{this.props.title}</h2>
           <p>{this.props.body}</p>
-          <ul>{items}</ul>
+          {items}
           <p id={this.props.id}>Edit Note</p>
         </div>
       );

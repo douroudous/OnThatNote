@@ -63,7 +63,7 @@ class App extends React.Component {
   render() {
     let notes = this.state.notes.map(note => {
       return(
-        <div>
+        <div className="small-4 columns">
           <Note
             key={note.id}
             id={note.id}
@@ -75,11 +75,13 @@ class App extends React.Component {
     })
 
     return(
-      <div className="animated fadeIn">
+      <div className="animated fadeIn centered">
         <NewNote
           handleSubmitNew={this.handleSubmitNew}
         />
-        {notes}
+        <div className="row container">
+          {notes}
+        </div>
       </div>
     );
   }
