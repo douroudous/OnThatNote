@@ -110,6 +110,12 @@ a:hover {
   color: white;
 }
 
+.input-form {
+  max-width: 60em;
+  margin: 0 auto;
+
+}
+
 .tabs-text {
   font-family: "Andale Mono";
   font-size: 15px;

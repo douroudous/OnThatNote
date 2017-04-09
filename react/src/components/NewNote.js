@@ -43,13 +43,15 @@ class Item extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label className='link'>
-          Enter new note</label>
-          <input type="text" value={this.state.newNote} onChange={this.handleChange} />
+      <div className="input-form">
+        <form onSubmit={this.handleSubmit}>
+          <label className='link'>
+            Enter new note</label>
+            <input type="text" value={this.state.newNote} onChange={this.handleChange} />
 
-        <input className='link' type="submit"/>
-      </form>
+          <input className='link' type="submit"/>
+        </form>
+      </div>
     );
   }
 }
