@@ -22,23 +22,23 @@ class Item extends React.Component {
     let songData = JSON.stringify(data);
     debugger;
 
-    // fetch(`/api/v1/artists/${this.props.noteId}/songs.json`,
-    //   { method: 'post',
-    //     body: songData,
-    //     credentials: 'include'
-    //   })
-    //   .then(response => {
-    //     if (response.ok) {
-    //       return response.json();
-    //     } else {
-    //       let errorMessage = `${response.status} ($response.statusText)`,
-    //         error = new Error(errorMessage);
-    //         throw(error);
-    //     }
-    //   })
-    //   .then(data => {
-    //   })
-    // .catch(error => console.error(`Error in fetch: ${error.message}`));
+    fetch(`/api/v1/notes/${this.props.noteId}/songs.json`,
+      { method: 'post',
+        body: songData,
+        credentials: 'include'
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          let errorMessage = `${response.status} ($response.statusText)`,
+            error = new Error(errorMessage);
+            throw(error);
+        }
+      })
+      .then(data => {
+      })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {

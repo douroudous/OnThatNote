@@ -111,9 +111,9 @@ a:hover {
 }
 
 .input-form {
-  max-width: 60em;
+  max-width: 70%;
   margin: 0 auto;
-
+  margin-bottom: 30px;
 }
 
 .tabs-text {
