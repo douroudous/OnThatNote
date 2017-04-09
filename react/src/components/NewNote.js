@@ -4,27 +4,25 @@ class Item extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-      newNote: ''
+      title: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({newNote: event.target.value});
+    this.setState({title: event.target.value});
   }
 
   handleSubmit(event) {
-    alert(`New note created`);
-    let data = {
-        note: this.state.newNote
+    let noteData = {
+        title: this.state.title
     };
-    let songData = JSON.stringify(data);
-    debugger;
+    let noteJson = JSON.stringify(noteData);
 
-    fetch(`/api/v1/notes/${this.props.noteId}/songs.json`,
+    fetch(`/api/v1/notes.json`,
       { method: 'post',
-        body: songData,
+        body: noteJson,
         credentials: 'include'
       })
       .then(response => {
@@ -39,15 +37,16 @@ class Item extends React.Component {
       .then(data => {
       })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
+
+    this.setState({ title: "empty"});
   }
 
   render() {
     return (
       <div className="input-form">
         <form onSubmit={this.handleSubmit}>
-          <label className='link'>
-            Enter new note</label>
-            <input type="text" value={this.state.newNote} onChange={this.handleChange} />
+          <label className='link'>Title</label>
+            <input type="text" value={this.state.title} onChange={this.handleChange} />
 
           <input className='link' type="submit"/>
         </form>

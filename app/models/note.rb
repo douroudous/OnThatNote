@@ -5,8 +5,4 @@ class Note < ActiveRecord::Base
 
   validates :title, presence: true
 
-  def self.search(search)
-    where("body ILIKE ? OR title ILIKE ?", "%#{search}%", "%#{search}%")
-  end
-
 end
