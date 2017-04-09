@@ -4,19 +4,21 @@ class Item extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-      title: ''
+      title: '',
+      body: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({title: event.target.value});
+    this.setState({[event.target.dataset.form]: event.target.value});
   }
 
   handleSubmit(event) {
     let noteData = {
-        title: this.state.title
+        title: this.state.title,
+        body: this.state.body
     };
     let noteJson = JSON.stringify(noteData);
 
@@ -37,17 +39,20 @@ class Item extends React.Component {
       .then(data => {
       })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
-
-    this.setState({ title: "empty"});
+    this.setState({ title: '',
+                    body: ''  });
   }
 
   render() {
     return (
       <div className="input-form">
         <form onSubmit={this.handleSubmit}>
-          <label className='link'>Title</label>
-            <input type="text" value={this.state.title} onChange={this.handleChange} />
-
+          <label className='link'>Title
+            <input type="text" data-form="title" value={this.state.title} onChange={this.handleChange} />
+          </label>
+          <label className='link'>Body
+            <input type="text" data-form="body" value={this.state.body} onChange={this.handleChange} />
+          </label>
           <input className='link' type="submit"/>
         </form>
       </div>

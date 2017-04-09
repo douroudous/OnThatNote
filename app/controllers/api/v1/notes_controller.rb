@@ -1,10 +1,11 @@
 class Api::V1::NotesController < ApplicationController
 
   def create
-     @note = Note.new
+    @note = Note.new
     @note.user = current_user
     note_info = JSON.parse(request.body.read)
     @note.title = note_info["title"]
+    @note.body = note_info["body"]
     @note.save
   end
 
